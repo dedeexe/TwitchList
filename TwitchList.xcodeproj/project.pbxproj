@@ -97,6 +97,8 @@
 		E2CF6CC61EB77BFC007ECE43 /* TwitchList */ = {
 			isa = PBXGroup;
 			children = (
+				E2F346401EB77E36001036F2 /* Common */,
+				E2F3463F1EB77E2D001036F2 /* Modules */,
 				E2CF6CC71EB77BFC007ECE43 /* AppDelegate.swift */,
 				E2CF6CC91EB77BFC007ECE43 /* ViewController.swift */,
 				E2CF6CCB1EB77BFC007ECE43 /* Main.storyboard */,
@@ -123,6 +125,20 @@
 				E2CF6CE91EB77BFC007ECE43 /* Info.plist */,
 			);
 			path = TwitchListUITests;
+			sourceTree = "<group>";
+		};
+		E2F3463F1EB77E2D001036F2 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E2F346401EB77E36001036F2 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
