@@ -10,18 +10,18 @@
 import ObjectMapper
 import Foundation
 
-struct Game : Mappable {
+public struct Game : Mappable {
     
-    var id              : Int?
-    var box             : ImageGroup?
-    var giantBombId     : String?
-    var logo            : ImageGroup?
-    var name            : String?
-    var popularity      : Int?
+    public var id              : Int?
+    public var box             : ImageGroup?
+    public var giantBombId     : String?
+    public var logo            : ImageGroup?
+    public var name            : String?
+    public var popularity      : Int?
     
-    init?(map: Map) {}
+    public init?(map: Map) {}
     
-    mutating func mapping(map: Map) {
+    public mutating func mapping(map: Map) {
         self.id             <- map["_id"]
         self.box            <- map["box"]
         self.giantBombId    <- map["giantbomb_id"]

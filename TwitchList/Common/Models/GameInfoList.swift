@@ -9,14 +9,19 @@
 import ObjectMapper
 import Foundation
 
-struct GameInfoList : Mappable {
+public struct GameInfoList : Mappable {
     
-    var total       : Int?
-    var top         : [GameInfo]?
+    public var total       : Int?
+    public var top         : [GameInfo]?
     
-    init?(map: Map) {}
+    public init() {
+        total = 0
+        top = []
+    }
     
-    mutating func mapping(map: Map) {
+    public init?(map: Map) {}
+    
+    public mutating func mapping(map: Map) {
         self.total  <- map["_total"]
         self.top    <- map["top"]
     }

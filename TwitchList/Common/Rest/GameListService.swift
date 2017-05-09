@@ -7,49 +7,38 @@
 //
 
 import Foundation
+import ObjectMapper
 
-public struct ShotService : Gettable {
-
-    public typealias DataType = [String]
+public struct GameListService : Gettable {
     
+    public typealias DataType = GameInfoList
+    
+    public var pageSize     : Int = 50
     public var page         : Int = 0
-    public var pageSize     : Int = 5
     
-    public func get(completion: (FunkingResult<[String]>) -> Void)
+    public func get(completion: @escaping (FunkingResult<GameInfoList>) -> Void)
     {
-//        let url = AppConfig.baseURL.appending("/shots")
-//        FunkTheRest.get(url)
-//            .addHeader("Authorization", value: "Bearer \(AppConfig.token)")
-//            .addParameter("page", value: String(page))
-//            .addParameter("per_page", value: String(pageSize))
-//            .response { (result) in
-//                switch result {
-//                case .error(let err):
-//                    completion(FunkingResult<DataType>.error(err))
-//                case .success(let code, let resultData):
-//                    let shots = extractShots(from: resultData)
-//                    completion(FunkingResult<DataType>.success(code, shots))
-//            }
-//        }
+        let url = AppConfig.baseURL.appending(EndPoint.topGames.rawValue)
+        FunkTheRest.get(url)
+            .addHeader("Client-ID", value: "\(AppConfig.token)")
+            .addParameter("limit", value: String(pageSize))
+            .addParameter("offset", value: String(page))
+            .response { (result) in
+                switch result {
+                case .error(let err):
+                    completion(FunkingResult<DataType>.error(err))
+                case .success(let code, let resultData):
+                    let games = extractGameList(from: resultData)
+                    completion(FunkingResult<DataType>.success(code, games))
+            }
+        }
     }
 }
 
 //MARK: - Helpers
-//fileprivate func extractShots(from input:Data) -> [Shot]
-//{
-//    var shots : [Shot] = []
-//    var jsonResult : [[String:Any]] = []
-//    
-//    do {
-//        jsonResult = try JSONSerialization.jsonObject(with: input,
-//                                                      options: JSONSerialization.ReadingOptions.mutableLeaves) as! [[String:Any]]
-//    } catch {
-//        return []
-//    }
-//    
-//    for item in jsonResult {
-//        shots.append(ShotFactory(jsonElement: item).create())
-//    }
-//    
-//    return shots
-//}
+fileprivate func extractGameList(from input:Data) -> GameInfoList
+{
+    let jsonString = String(data: input, encoding: String.Encoding.utf8) ?? ""
+    let gameList = Mapper<GameInfoList>().map(JSONString: jsonString)
+    return gameList ?? GameInfoList()
+}

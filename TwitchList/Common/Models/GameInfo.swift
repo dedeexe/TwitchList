@@ -9,15 +9,15 @@
 import ObjectMapper
 import Foundation
 
-struct GameInfo : Mappable {
+public struct GameInfo : Mappable {
     
-    var channels    : Int?
-    var viewers     : ImageGroup?
-    var game        : Game?
+    public var channels    : Int?
+    public var viewers     : ImageGroup?
+    public var game        : Game?
 
-    init?(map: Map) {}
+    public init?(map: Map) {}
     
-    mutating func mapping(map: Map) {
+    public mutating func mapping(map: Map) {
         self.channels   <- map["channels"]
         self.viewers    <- map["viewers"]
         self.game       <- map["game"]

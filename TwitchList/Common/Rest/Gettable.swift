@@ -10,6 +10,6 @@ import Foundation
 
 public protocol Gettable {
     associatedtype DataType
-    func get(completion: (FunkingResult<DataType>) -> Void)
+    func get(completion: @escaping (FunkingResult<DataType>) -> Void)
 }
 

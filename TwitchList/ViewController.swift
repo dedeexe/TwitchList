@@ -12,7 +12,17 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        let game = GameListService()
+        
+        game.get { result in
+            if case .success(let status , let value) = result {
+                print(status)
+                dump(value)
+            }
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {

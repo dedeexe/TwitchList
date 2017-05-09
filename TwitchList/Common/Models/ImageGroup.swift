@@ -9,16 +9,16 @@
 import ObjectMapper
 import Foundation
 
-struct ImageGroup : Mappable {
+public struct ImageGroup : Mappable {
     
-    var large       : String?
-    var medium      : String?
-    var small       : String?
-    var template    : String?
+    public var large       : String?
+    public var medium      : String?
+    public var small       : String?
+    public var template    : String?
     
-    init?(map: Map) {}
+    public init?(map: Map) {}
     
-    mutating func mapping(map: Map) {
+    public mutating func mapping(map: Map) {
         self.large      <- map["large"]
         self.medium     <- map["medium"]
         self.small      <- map["small"]
