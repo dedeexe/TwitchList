@@ -17,6 +17,10 @@
 		E248C26E1EC1F69300F2EB2D /* FunkTheRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2681EC1F69300F2EB2D /* FunkTheRest.swift */; };
 		E248C2701EC1FE9C00F2EB2D /* GameListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C26F1EC1FE9C00F2EB2D /* GameListService.swift */; };
 		E248C2731EC1FEFF00F2EB2D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2721EC1FEFF00F2EB2D /* AppConfig.swift */; };
+		E248C2901EC2290D00F2EB2D /* ImageGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C28F1EC2290D00F2EB2D /* ImageGroup.swift */; };
+		E248C2941EC22BE900F2EB2D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2931EC22BE900F2EB2D /* Game.swift */; };
+		E248C2961EC22D6700F2EB2D /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2951EC22D6700F2EB2D /* GameInfo.swift */; };
+		E248C2981EC22DEA00F2EB2D /* GameInfoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2971EC22DEA00F2EB2D /* GameInfoList.swift */; };
 		E2CF6CC81EB77BFC007ECE43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF6CC71EB77BFC007ECE43 /* AppDelegate.swift */; };
 		E2CF6CCA1EB77BFC007ECE43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF6CC91EB77BFC007ECE43 /* ViewController.swift */; };
 		E2CF6CCD1EB77BFC007ECE43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CF6CCB1EB77BFC007ECE43 /* Main.storyboard */; };
@@ -76,6 +80,13 @@
 			remoteGlobalIDString = 6A05B7AF1BE274BE00F19B53;
 			remoteInfo = "ObjectMapper-tvOSTests";
 		};
+		E248C2911EC22A8D00F2EB2D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E248C2741EC2269900F2EB2D /* ObjectMapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AAC8F7519F03C2900E7A677;
+			remoteInfo = "ObjectMapper-iOS";
+		};
 		E2CF6CD91EB77BFC007ECE43 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E2CF6CBC1EB77BFC007ECE43 /* Project object */;
@@ -104,6 +115,10 @@
 		E248C26F1EC1FE9C00F2EB2D /* GameListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListService.swift; sourceTree = "<group>"; };
 		E248C2721EC1FEFF00F2EB2D /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		E248C2741EC2269900F2EB2D /* ObjectMapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectMapper.xcodeproj; path = ThirdParties/ObjectMapper/ObjectMapper.xcodeproj; sourceTree = "<group>"; };
+		E248C28F1EC2290D00F2EB2D /* ImageGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGroup.swift; sourceTree = "<group>"; };
+		E248C2931EC22BE900F2EB2D /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		E248C2951EC22D6700F2EB2D /* GameInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
+		E248C2971EC22DEA00F2EB2D /* GameInfoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInfoList.swift; sourceTree = "<group>"; };
 		E2CF6CC41EB77BFC007ECE43 /* TwitchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CF6CC71EB77BFC007ECE43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2CF6CC91EB77BFC007ECE43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -200,6 +215,10 @@
 		E248C28E1EC2287500F2EB2D /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				E248C28F1EC2290D00F2EB2D /* ImageGroup.swift */,
+				E248C2931EC22BE900F2EB2D /* Game.swift */,
+				E248C2951EC22D6700F2EB2D /* GameInfo.swift */,
+				E248C2971EC22DEA00F2EB2D /* GameInfoList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -290,6 +309,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				E248C2921EC22A8D00F2EB2D /* PBXTargetDependency */,
 			);
 			name = TwitchList;
 			productName = TwitchList;
@@ -470,6 +490,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E248C2611EC1F67F00F2EB2D /* NetworkingResult.swift in Sources */,
+				E248C2941EC22BE900F2EB2D /* Game.swift in Sources */,
+				E248C2901EC2290D00F2EB2D /* ImageGroup.swift in Sources */,
 				E248C26C1EC1F69300F2EB2D /* FunkingResponse.swift in Sources */,
 				E2CF6CCA1EB77BFC007ECE43 /* ViewController.swift in Sources */,
 				E248C26A1EC1F69300F2EB2D /* FunkingMethod.swift in Sources */,
@@ -478,9 +500,11 @@
 				E248C2691EC1F69300F2EB2D /* FunkingHelpers.swift in Sources */,
 				E248C2701EC1FE9C00F2EB2D /* GameListService.swift in Sources */,
 				E248C26D1EC1F69300F2EB2D /* FunkingResult.swift in Sources */,
+				E248C2961EC22D6700F2EB2D /* GameInfo.swift in Sources */,
 				E248C2731EC1FEFF00F2EB2D /* AppConfig.swift in Sources */,
 				E248C26B1EC1F69300F2EB2D /* FunkingRequest.swift in Sources */,
 				E248C26E1EC1F69300F2EB2D /* FunkTheRest.swift in Sources */,
+				E248C2981EC22DEA00F2EB2D /* GameInfoList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -503,6 +527,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E248C2921EC22A8D00F2EB2D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectMapper-iOS";
+			targetProxy = E248C2911EC22A8D00F2EB2D /* PBXContainerItemProxy */;
+		};
 		E2CF6CDA1EB77BFC007ECE43 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E2CF6CC31EB77BFC007ECE43 /* TwitchList */;

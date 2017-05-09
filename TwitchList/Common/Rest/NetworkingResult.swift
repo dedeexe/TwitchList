@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum NetworkingResult<T> {
+public enum Result<T> {
     case success(T)
     case fail(Error)
 }
