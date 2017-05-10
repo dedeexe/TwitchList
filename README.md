@@ -33,3 +33,4 @@ Crie o seu próprio repositório e nos envie o link. Se seu repositório for pri
 
 * Nao foi feito a persistencia com CoreData. Apenas foi salvo o json em um arquivo de texto em NSDocumentsDirectory
 * Nao deu para dar uma pincelada nas telas.
+* As dependencias do projeto são resolvidas com Git Submodules
