@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameDetailViewController: UIViewController {
+class GameDetailViewController: UIViewController, GameDetailView {
     
     var gameInfo    : GameInfo?
     var presenter   : GameDetailInterface?
@@ -57,11 +57,12 @@ class GameDetailViewController: UIViewController {
     
     func configureLogoShadow() {
         //shadowView.layer.cornerRadius = logoRadius
-        //shadowView.backgroundColor = UIColor.clear
+        shadowView.backgroundColor = UIColor.clear
         
         shadowView.layer.shadowRadius = 15.0
         shadowView.layer.shadowColor = UIColor.black.cgColor
         shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        shadowView.layer.masksToBounds = false
         
     }
     
@@ -101,10 +102,11 @@ class GameDetailViewController: UIViewController {
         }
     }
     
-}
 
-
-extension GameDetailViewController : GameDetailView {
+    //
+    //MARK: - GameDetailView
+    //
+    
     func showNoGameInfo() {
         showEmptyLabel()
     }

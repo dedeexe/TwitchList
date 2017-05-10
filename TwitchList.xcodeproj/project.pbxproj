@@ -41,11 +41,14 @@
 		E248C2CB1EC2AA6C00F2EB2D /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2CA1EC2AA6C00F2EB2D /* ImageDownloadService.swift */; };
 		E248C2CE1EC2AB4100F2EB2D /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2CD1EC2AB4100F2EB2D /* HttpStatusCode.swift */; };
 		E248C2D11EC2B6A000F2EB2D /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2D01EC2B6A000F2EB2D /* GameScreenViewController.swift */; };
+		E24EED4C1EC37BF300F719C6 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E248C27F1EC2269900F2EB2D /* ObjectMapper.framework */; };
+		E24EED4D1EC37BF300F719C6 /* ObjectMapper.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E248C27F1EC2269900F2EB2D /* ObjectMapper.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E24EED571EC3A68800F719C6 /* PersistServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EED561EC3A68800F719C6 /* PersistServiceTest.swift */; };
+		E24EED591EC3A93600F719C6 /* GameDetailViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E24EED581EC3A93600F719C6 /* GameDetailViewControllerTests.swift */; };
 		E2CF6CC81EB77BFC007ECE43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF6CC71EB77BFC007ECE43 /* AppDelegate.swift */; };
 		E2CF6CCD1EB77BFC007ECE43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CF6CCB1EB77BFC007ECE43 /* Main.storyboard */; };
 		E2CF6CCF1EB77BFC007ECE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CF6CCE1EB77BFC007ECE43 /* Assets.xcassets */; };
 		E2CF6CD21EB77BFC007ECE43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CF6CD01EB77BFC007ECE43 /* LaunchScreen.storyboard */; };
-		E2CF6CDD1EB77BFC007ECE43 /* TwitchListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF6CDC1EB77BFC007ECE43 /* TwitchListTests.swift */; };
 		E2CF6CE81EB77BFC007ECE43 /* TwitchListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF6CE71EB77BFC007ECE43 /* TwitchListUITests.swift */; };
 		E2FF2F381EC2E840002EDC13 /* PersistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF2F371EC2E840002EDC13 /* PersistService.swift */; };
 /* End PBXBuildFile section */
@@ -107,6 +110,13 @@
 			remoteGlobalIDString = 6AAC8F7519F03C2900E7A677;
 			remoteInfo = "ObjectMapper-iOS";
 		};
+		E24EED4E1EC37BF300F719C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E248C2741EC2269900F2EB2D /* ObjectMapper.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 6AAC8F7519F03C2900E7A677;
+			remoteInfo = "ObjectMapper-iOS";
+		};
 		E2CF6CD91EB77BFC007ECE43 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E2CF6CBC1EB77BFC007ECE43 /* Project object */;
@@ -122,6 +132,20 @@
 			remoteInfo = TwitchList;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E24EED501EC37BF300F719C6 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E24EED4D1EC37BF300F719C6 /* ObjectMapper.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		E248C25D1EC1F67F00F2EB2D /* Gettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gettable.swift; sourceTree = "<group>"; };
@@ -159,6 +183,8 @@
 		E248C2CA1EC2AA6C00F2EB2D /* ImageDownloadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
 		E248C2CD1EC2AB4100F2EB2D /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		E248C2D01EC2B6A000F2EB2D /* GameScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
+		E24EED561EC3A68800F719C6 /* PersistServiceTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistServiceTest.swift; sourceTree = "<group>"; };
+		E24EED581EC3A93600F719C6 /* GameDetailViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDetailViewControllerTests.swift; sourceTree = "<group>"; };
 		E2CF6CC41EB77BFC007ECE43 /* TwitchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CF6CC71EB77BFC007ECE43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2CF6CCC1EB77BFC007ECE43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -166,12 +192,12 @@
 		E2CF6CD11EB77BFC007ECE43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E2CF6CD31EB77BFC007ECE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2CF6CD81EB77BFC007ECE43 /* TwitchListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitchListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		E2CF6CDC1EB77BFC007ECE43 /* TwitchListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchListTests.swift; sourceTree = "<group>"; };
 		E2CF6CDE1EB77BFC007ECE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2CF6CE31EB77BFC007ECE43 /* TwitchListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitchListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CF6CE71EB77BFC007ECE43 /* TwitchListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchListUITests.swift; sourceTree = "<group>"; };
 		E2CF6CE91EB77BFC007ECE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E2FF2F371EC2E840002EDC13 /* PersistService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistService.swift; sourceTree = "<group>"; };
+		E2FF2F3B1EC35C65002EDC13 /* TwitchListTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwitchListTests-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +205,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E24EED4C1EC37BF300F719C6 /* ObjectMapper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +363,29 @@
 			path = GameScreen;
 			sourceTree = "<group>";
 		};
+		E24EED531EC37DB700F719C6 /* MockedData */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MockedData;
+			sourceTree = "<group>";
+		};
+		E24EED541EC3A64B00F719C6 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				E24EED551EC3A66200F719C6 /* Rest */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		E24EED551EC3A66200F719C6 /* Rest */ = {
+			isa = PBXGroup;
+			children = (
+				E24EED561EC3A68800F719C6 /* PersistServiceTest.swift */,
+			);
+			path = Rest;
+			sourceTree = "<group>";
+		};
 		E2CF6CBB1EB77BFB007ECE43 = {
 			isa = PBXGroup;
 			children = (
@@ -374,7 +424,9 @@
 		E2CF6CDB1EB77BFC007ECE43 /* TwitchListTests */ = {
 			isa = PBXGroup;
 			children = (
-				E2CF6CDC1EB77BFC007ECE43 /* TwitchListTests.swift */,
+				E24EED541EC3A64B00F719C6 /* Common */,
+				E24EED531EC37DB700F719C6 /* MockedData */,
+				E2FF2F391EC35BEA002EDC13 /* Modules */,
 				E2CF6CDE1EB77BFC007ECE43 /* Info.plist */,
 			);
 			path = TwitchListTests;
@@ -411,6 +463,23 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		E2FF2F391EC35BEA002EDC13 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				E2FF2F3A1EC35C10002EDC13 /* GameDetail */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		E2FF2F3A1EC35C10002EDC13 /* GameDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E24EED581EC3A93600F719C6 /* GameDetailViewControllerTests.swift */,
+				E2FF2F3B1EC35C65002EDC13 /* TwitchListTests-Bridging-Header.h */,
+			);
+			path = GameDetail;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -421,11 +490,13 @@
 				E2CF6CC01EB77BFC007ECE43 /* Sources */,
 				E2CF6CC11EB77BFC007ECE43 /* Frameworks */,
 				E2CF6CC21EB77BFC007ECE43 /* Resources */,
+				E24EED501EC37BF300F719C6 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				E248C2921EC22A8D00F2EB2D /* PBXTargetDependency */,
+				E24EED4F1EC37BF300F719C6 /* PBXTargetDependency */,
 			);
 			name = TwitchList;
 			productName = TwitchList;
@@ -485,6 +556,7 @@
 					};
 					E2CF6CD71EB77BFC007ECE43 = {
 						CreatedOnToolsVersion = 8.3.2;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 						TestTargetID = E2CF6CC31EB77BFC007ECE43;
 					};
@@ -648,7 +720,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2CF6CDD1EB77BFC007ECE43 /* TwitchListTests.swift in Sources */,
+				E24EED571EC3A68800F719C6 /* PersistServiceTest.swift in Sources */,
+				E24EED591EC3A93600F719C6 /* GameDetailViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -667,6 +740,11 @@
 			isa = PBXTargetDependency;
 			name = "ObjectMapper-iOS";
 			targetProxy = E248C2911EC22A8D00F2EB2D /* PBXContainerItemProxy */;
+		};
+		E24EED4F1EC37BF300F719C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "ObjectMapper-iOS";
+			targetProxy = E24EED4E1EC37BF300F719C6 /* PBXContainerItemProxy */;
 		};
 		E2CF6CDA1EB77BFC007ECE43 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -798,6 +876,7 @@
 		E2CF6CED1EB77BFC007ECE43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SD6HQTT68J;
 				INFOPLIST_FILE = TwitchList/Info.plist;
@@ -812,6 +891,7 @@
 		E2CF6CEE1EB77BFC007ECE43 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = SD6HQTT68J;
 				INFOPLIST_FILE = TwitchList/Info.plist;
@@ -828,10 +908,13 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TwitchListTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = exe.dede.TwitchListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TwitchListTests/Modules/GameDetail/TwitchListTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TwitchList.app/TwitchList";
 			};
@@ -842,10 +925,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = TwitchListTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = exe.dede.TwitchListTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "TwitchListTests/Modules/GameDetail/TwitchListTests-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TwitchList.app/TwitchList";
 			};
