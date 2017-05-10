@@ -28,3 +28,8 @@ Para desenvolver o app você vai precisar usar o endpoint do Twitch https://gith
 # Enviando o seu teste  
 
 Crie o seu próprio repositório e nos envie o link. Se seu repositório for privado, adicione o(s) usuário(s) do time de mobile do VivaReal com permissão de leitura para podermos ver seu código.
+
+# Observacoes
+
+* Nao foi feito a persistencia com CoreData. Apenas foi salvo o json em um arquivo de texto em NSDocumentsDirectory
+* Nao deu para dar uma pincelada nas telas.
