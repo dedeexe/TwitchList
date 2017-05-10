@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import ObjectMapper
 
 class GameListDefaultInteractor : GameListInteractorInput
 {
@@ -20,7 +21,21 @@ class GameListDefaultInteractor : GameListInteractorInput
             if case .success(let status, let games) = result {
                 NSLog("Game Request Status: \(status)")
                 self.output?.fetchGames(games: games)
+                self.save(content: games.toJSONString() ?? "", to: AppConfig.storeFile)
+                return
             }
+            
+            let json = self.restore(from: AppConfig.storeFile)
+            let games = Mapper<GameInfoList>().map(JSONString: json ?? "{}") ?? GameInfoList()
+            self.output?.fetchGames(games: games)
         }
+    }
+    
+    func save(content:String, to file:String) {
+        PersistService(on: file).save(content: content)
+    }
+    
+    func restore(from file:String) -> String? {
+        return PersistService(on: file).restore()
     }
 }

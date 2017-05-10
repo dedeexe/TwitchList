@@ -11,4 +11,6 @@ import Foundation
 public class AppConfig {
     public static let baseURL = "https://api.twitch.tv/kraken"
     public static let token = "ccw1a6qw3pkdqhd18xbjvdmu5akkch"
+    
+    public static let storeFile = "offline.json"
 }

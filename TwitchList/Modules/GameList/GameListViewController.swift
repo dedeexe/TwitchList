@@ -22,6 +22,8 @@ class GameListViewController: UIViewController  {
         super.viewDidLoad()
         loadConfigurations()
         presenter?.getGames()
+        
+        print(NSHomeDirectory())
     }
 
     override func didReceiveMemoryWarning() {

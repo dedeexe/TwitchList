@@ -47,6 +47,7 @@
 		E2CF6CD21EB77BFC007ECE43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CF6CD01EB77BFC007ECE43 /* LaunchScreen.storyboard */; };
 		E2CF6CDD1EB77BFC007ECE43 /* TwitchListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF6CDC1EB77BFC007ECE43 /* TwitchListTests.swift */; };
 		E2CF6CE81EB77BFC007ECE43 /* TwitchListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF6CE71EB77BFC007ECE43 /* TwitchListUITests.swift */; };
+		E2FF2F381EC2E840002EDC13 /* PersistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF2F371EC2E840002EDC13 /* PersistService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +171,7 @@
 		E2CF6CE31EB77BFC007ECE43 /* TwitchListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TwitchListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CF6CE71EB77BFC007ECE43 /* TwitchListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwitchListUITests.swift; sourceTree = "<group>"; };
 		E2CF6CE91EB77BFC007ECE43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E2FF2F371EC2E840002EDC13 /* PersistService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +220,7 @@
 				E248C26F1EC1FE9C00F2EB2D /* GameListService.swift */,
 				E248C2991EC2342800F2EB2D /* EndPointRoute.swift */,
 				E248C2CA1EC2AA6C00F2EB2D /* ImageDownloadService.swift */,
+				E2FF2F371EC2E840002EDC13 /* PersistService.swift */,
 			);
 			path = Rest;
 			sourceTree = "<group>";
@@ -629,6 +632,7 @@
 				E248C2961EC22D6700F2EB2D /* GameInfo.swift in Sources */,
 				E248C2731EC1FEFF00F2EB2D /* AppConfig.swift in Sources */,
 				E248C2CB1EC2AA6C00F2EB2D /* ImageDownloadService.swift in Sources */,
+				E2FF2F381EC2E840002EDC13 /* PersistService.swift in Sources */,
 				E248C2AF1EC2418800F2EB2D /* GameCell.swift in Sources */,
 				E248C26B1EC1F69300F2EB2D /* FunkingRequest.swift in Sources */,
 				E248C26E1EC1F69300F2EB2D /* FunkTheRest.swift in Sources */,
