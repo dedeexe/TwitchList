@@ -49,6 +49,8 @@ class GameListViewController: UIViewController  {
     func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+        tableView.estimatedRowHeight = UITableViewAutomaticDimension
+        tableView.separatorStyle = .none
     }
     
     func configureView() {
@@ -106,8 +108,22 @@ extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
             return defaultCell
         }
         
+        cell.tag = indexPath.row
         cell.selectionStyle = .none
         cell.gameNameLabel.text = gameInfo.game?.name
+        
+        
+        ImageDownloadService(url: gameInfo.game?.box?.large ?? "").get { result in
+            if case .success(_, let content) = result {
+                DispatchQueue.main.async {
+                    if cell.tag == indexPath.row {
+                        cell.gameImageView.image = content
+                    }
+                }
+            }
+        }
+        
+        
         return cell
     }
     
@@ -116,5 +132,9 @@ extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let game = games[indexPath.row]
         presenter?.gotoGameDetail(of: game)
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
     }
 }

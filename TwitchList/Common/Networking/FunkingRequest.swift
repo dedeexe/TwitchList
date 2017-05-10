@@ -36,7 +36,7 @@ open class FunkingRequest {
     }
     
     public init(url:String, methodName:String) {
-        self.url = URL(string:url)!
+        self.url = URL(string:url) ?? URL(fileURLWithPath: "")
         self.method = methodName
     }
     
