@@ -33,6 +33,7 @@ class GameListViewController: UIViewController  {
         GameListConfigurator.shared.configure(view: self)
         configureCells()
         configureTableView()
+        configureView()
     }
     
     func configureCells() {
@@ -44,6 +45,11 @@ class GameListViewController: UIViewController  {
     func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    func configureView() {
+        self.title = "Jogos Mais Populares"
+        
     }
     
 }
@@ -94,6 +100,7 @@ extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
     
     //MARK: -- Delegate Methods 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //GOTO Next Screen
+        let game = games[indexPath.row]
+        presenter?.gotoGameDetail(of: game)
     }
 }

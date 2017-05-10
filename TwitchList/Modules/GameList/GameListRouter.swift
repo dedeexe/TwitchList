@@ -11,11 +11,23 @@ import UIKit
 
 class GameListRouter : GameListWireframe {
     
-    private weak var viewController : UIViewController?
+    private weak var viewController : GameListViewController?
     
+    init(viewController reference : GameListViewController) {
+        viewController = reference
+    }
     
-    func gotoGameDetail(game: GameInfo) {
-        let vc = viewController?.storyboard?.instantiateViewController(withIdentifier: "GameDetail")
+    func gotoGameDetail(of game: GameInfo) {
+        guard let vc = viewController?.storyboard?.instantiateViewController(withIdentifier: "GameDetail") as? GameDetailViewController else {
+            return
+        }
+        
+        guard let splitController = viewController?.splitViewController else {
+            return
+        }
+        
+        vc.gameInfo = game
+        splitController.showDetailViewController(vc, sender:nil)
     }
     
 }

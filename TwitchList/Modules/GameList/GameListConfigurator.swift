@@ -25,6 +25,9 @@ class GameListConfigurator {
         let input = GameListDefaultInteractor()
         presenter.input = input
         input.output = presenter
+        
+        let router = GameListRouter(viewController: view)
+        presenter.router = router
     }
     
 }

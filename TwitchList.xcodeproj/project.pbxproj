@@ -40,8 +40,9 @@
 		E248C2C61EC2A39F00F2EB2D /* GameDetailConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2C51EC2A39F00F2EB2D /* GameDetailConfiguration.swift */; };
 		E248C2C91EC2A5D300F2EB2D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2C81EC2A5D300F2EB2D /* ImageDownloader.swift */; };
 		E248C2CB1EC2AA6C00F2EB2D /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2CA1EC2AA6C00F2EB2D /* ImageDownloadService.swift */; };
+		E248C2CE1EC2AB4100F2EB2D /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2CD1EC2AB4100F2EB2D /* HttpStatusCode.swift */; };
+		E248C2D11EC2B6A000F2EB2D /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2D01EC2B6A000F2EB2D /* GameScreenViewController.swift */; };
 		E2CF6CC81EB77BFC007ECE43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF6CC71EB77BFC007ECE43 /* AppDelegate.swift */; };
-		E2CF6CCA1EB77BFC007ECE43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF6CC91EB77BFC007ECE43 /* ViewController.swift */; };
 		E2CF6CCD1EB77BFC007ECE43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CF6CCB1EB77BFC007ECE43 /* Main.storyboard */; };
 		E2CF6CCF1EB77BFC007ECE43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E2CF6CCE1EB77BFC007ECE43 /* Assets.xcassets */; };
 		E2CF6CD21EB77BFC007ECE43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E2CF6CD01EB77BFC007ECE43 /* LaunchScreen.storyboard */; };
@@ -157,9 +158,10 @@
 		E248C2C51EC2A39F00F2EB2D /* GameDetailConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDetailConfiguration.swift; sourceTree = "<group>"; };
 		E248C2C81EC2A5D300F2EB2D /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		E248C2CA1EC2AA6C00F2EB2D /* ImageDownloadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
+		E248C2CD1EC2AB4100F2EB2D /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
+		E248C2D01EC2B6A000F2EB2D /* GameScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
 		E2CF6CC41EB77BFC007ECE43 /* TwitchList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitchList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2CF6CC71EB77BFC007ECE43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E2CF6CC91EB77BFC007ECE43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E2CF6CCC1EB77BFC007ECE43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E2CF6CCE1EB77BFC007ECE43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E2CF6CD11EB77BFC007ECE43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -325,6 +327,22 @@
 			name = Tools;
 			sourceTree = "<group>";
 		};
+		E248C2CC1EC2AB1B00F2EB2D /* Enumeration */ = {
+			isa = PBXGroup;
+			children = (
+				E248C2CD1EC2AB4100F2EB2D /* HttpStatusCode.swift */,
+			);
+			path = Enumeration;
+			sourceTree = "<group>";
+		};
+		E248C2CF1EC2B66700F2EB2D /* GameScreen */ = {
+			isa = PBXGroup;
+			children = (
+				E248C2D01EC2B6A000F2EB2D /* GameScreenViewController.swift */,
+			);
+			path = GameScreen;
+			sourceTree = "<group>";
+		};
 		E2CF6CBB1EB77BFB007ECE43 = {
 			isa = PBXGroup;
 			children = (
@@ -352,7 +370,6 @@
 				E2F346401EB77E36001036F2 /* Common */,
 				E2F3463F1EB77E2D001036F2 /* Modules */,
 				E2CF6CC71EB77BFC007ECE43 /* AppDelegate.swift */,
-				E2CF6CC91EB77BFC007ECE43 /* ViewController.swift */,
 				E2CF6CCB1EB77BFC007ECE43 /* Main.storyboard */,
 				E2CF6CCE1EB77BFC007ECE43 /* Assets.xcassets */,
 				E2CF6CD01EB77BFC007ECE43 /* LaunchScreen.storyboard */,
@@ -382,6 +399,7 @@
 		E2F3463F1EB77E2D001036F2 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				E248C2CF1EC2B66700F2EB2D /* GameScreen */,
 				E248C2B51EC25C6700F2EB2D /* GameDetail */,
 				E248C29B1EC2387200F2EB2D /* GameList */,
 			);
@@ -391,6 +409,7 @@
 		E2F346401EB77E36001036F2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				E248C2CC1EC2AB1B00F2EB2D /* Enumeration */,
 				E248C2C71EC2A58A00F2EB2D /* Tools */,
 				E248C2711EC1FEE600F2EB2D /* Config */,
 				E248C28E1EC2287500F2EB2D /* Models */,
@@ -604,13 +623,13 @@
 				E248C2901EC2290D00F2EB2D /* ImageGroup.swift in Sources */,
 				E248C26C1EC1F69300F2EB2D /* FunkingResponse.swift in Sources */,
 				E248C2A21EC23AF600F2EB2D /* GameListViewController.swift in Sources */,
-				E2CF6CCA1EB77BFC007ECE43 /* ViewController.swift in Sources */,
 				E248C26A1EC1F69300F2EB2D /* FunkingMethod.swift in Sources */,
 				E248C2601EC1F67F00F2EB2D /* Gettable.swift in Sources */,
 				E2CF6CC81EB77BFC007ECE43 /* AppDelegate.swift in Sources */,
 				E248C2A91EC23DF900F2EB2D /* GameListIO.swift in Sources */,
 				E248C2A71EC23B5300F2EB2D /* GameListView.swift in Sources */,
 				E248C2BE1EC260E600F2EB2D /* GameDetailInterface.swift in Sources */,
+				E248C2D11EC2B6A000F2EB2D /* GameScreenViewController.swift in Sources */,
 				E248C2691EC1F69300F2EB2D /* FunkingHelpers.swift in Sources */,
 				E248C2BC1EC260DB00F2EB2D /* GameDetailView.swift in Sources */,
 				E248C2701EC1FE9C00F2EB2D /* GameListService.swift in Sources */,
@@ -629,6 +648,7 @@
 				E248C2C61EC2A39F00F2EB2D /* GameDetailConfiguration.swift in Sources */,
 				E248C2981EC22DEA00F2EB2D /* GameInfoList.swift in Sources */,
 				E248C2B91EC2606800F2EB2D /* GameDetailViewController.swift in Sources */,
+				E248C2CE1EC2AB4100F2EB2D /* HttpStatusCode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

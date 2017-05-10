@@ -18,5 +18,6 @@ public protocol GameDetailView : class {
     func showGame(banner:UIImage?)
     
     func showNoGameInfo()
+    func hideNoGameInfo()
     
 }

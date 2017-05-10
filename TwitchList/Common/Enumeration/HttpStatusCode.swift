@@ -1,5 +1,5 @@
 //
-//  GameListWireframe.swift
+//  HttpStatusCode.swift
 //  TwitchList
 //
 //  Created by dede.exe on 09/05/17.
@@ -8,6 +8,7 @@
 
 import Foundation
 
-public protocol GameListWireframe : class {
-    func gotoGameDetail(of game:GameInfo)
+
+public enum HttpStatusCode : Int {
+    case ok = 200
 }

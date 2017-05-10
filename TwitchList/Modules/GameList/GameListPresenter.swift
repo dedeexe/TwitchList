@@ -12,11 +12,15 @@ import Foundation
 public class GameListPresenter : GameListInterface, GameListInteractorOutput {
     
     weak var view : GameListView?
-    
     var input : GameListInteractorInput?
+    var router : GameListWireframe?
     
     func getGames() {
         input?.searchGames(pageSize: 50, pageNumber: 0)
+    }
+    
+    func gotoGameDetail(of game: GameInfo) {
+        router?.gotoGameDetail(of: game)
     }
     
     public func fetchGames(games: GameInfoList) {
