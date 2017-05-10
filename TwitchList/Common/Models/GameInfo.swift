@@ -12,7 +12,7 @@ import Foundation
 public struct GameInfo : Mappable {
     
     public var channels    : Int?
-    public var viewers     : ImageGroup?
+    public var viewers     : Int?
     public var game        : Game?
 
     public init?(map: Map) {}

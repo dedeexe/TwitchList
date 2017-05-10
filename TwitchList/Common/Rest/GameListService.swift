@@ -25,13 +25,13 @@ public struct GameListService : Gettable {
             .addParameter("offset", value: String(page))
             .response { (result) in
                 switch result {
-                case .error(let err):
-                    completion(FunkingResult<DataType>.error(err))
-                case .success(let code, let resultData):
-                    let games = extractGameList(from: resultData)
-                    completion(FunkingResult<DataType>.success(code, games))
+                    case .error(let err):
+                        completion(FunkingResult<DataType>.error(err))
+                    case .success(let code, let resultData):
+                        let games = extractGameList(from: resultData)
+                        completion(FunkingResult<DataType>.success(code, games))
+                }
             }
-        }
     }
 }
 
