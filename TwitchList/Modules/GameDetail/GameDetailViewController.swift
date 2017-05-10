@@ -46,7 +46,7 @@ class GameDetailViewController: UIViewController {
     
     //MARK: - Configurations
     func configureView() {
-        self.navigationItem.backBarButtonItem? = UIBarButtonItem(title: "Voltar", style: .plain, target: nil, action: nil)
+        self.title = "Detalhes"
     }
     
     
