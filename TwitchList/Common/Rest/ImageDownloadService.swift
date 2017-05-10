@@ -34,7 +34,7 @@ struct ImageDownloadService : Gettable {
                         let image = UIImage(data: resultData)
                         completion(FunkingResult<DataType>.success(code, image))
                 }
-        }
+            }
         
     }
     

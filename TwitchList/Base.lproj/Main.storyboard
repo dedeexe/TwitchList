@@ -72,17 +72,17 @@
                                 <rect key="frame" x="137" y="140" width="100" height="100"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ctK-Ux-ck7">
-                                        <rect key="frame" x="4" y="4" width="92" height="92"/>
+                                        <rect key="frame" x="2" y="2" width="96" height="96"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="ctK-Ux-ck7" firstAttribute="top" secondItem="YRW-1J-vBJ" secondAttribute="top" constant="4" id="44h-Q6-1sN"/>
+                                    <constraint firstItem="ctK-Ux-ck7" firstAttribute="top" secondItem="YRW-1J-vBJ" secondAttribute="top" constant="2" id="44h-Q6-1sN"/>
                                     <constraint firstAttribute="width" secondItem="YRW-1J-vBJ" secondAttribute="height" multiplier="1:1" id="9dg-oD-COP"/>
-                                    <constraint firstAttribute="trailing" secondItem="ctK-Ux-ck7" secondAttribute="trailing" constant="4" id="Ekm-BY-yRY"/>
+                                    <constraint firstAttribute="trailing" secondItem="ctK-Ux-ck7" secondAttribute="trailing" constant="2" id="Ekm-BY-yRY"/>
                                     <constraint firstAttribute="width" constant="100" id="LWo-PD-Nc7"/>
-                                    <constraint firstItem="ctK-Ux-ck7" firstAttribute="leading" secondItem="YRW-1J-vBJ" secondAttribute="leading" constant="4" id="MJd-GY-3lQ"/>
-                                    <constraint firstAttribute="bottom" secondItem="ctK-Ux-ck7" secondAttribute="bottom" constant="4" id="cKy-T4-570"/>
+                                    <constraint firstItem="ctK-Ux-ck7" firstAttribute="leading" secondItem="YRW-1J-vBJ" secondAttribute="leading" constant="2" id="MJd-GY-3lQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="ctK-Ux-ck7" secondAttribute="bottom" constant="2" id="cKy-T4-570"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nuy-zb-EBw">

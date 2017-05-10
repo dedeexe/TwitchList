@@ -41,6 +41,7 @@ class GameDetailViewController: UIViewController {
         GameDetailConfiguration.shared.configure(view: self)
         configureView()
         configureLogo()
+        configureLogoShadow()
     }
     
     //MARK: - Configurations
@@ -55,40 +56,49 @@ class GameDetailViewController: UIViewController {
     }
     
     func configureLogoShadow() {
-        gameLogoView.layer.cornerRadius = logoRadius
+        //shadowView.layer.cornerRadius = logoRadius
+        //shadowView.backgroundColor = UIColor.clear
+        
+        shadowView.layer.shadowRadius = 15.0
+        shadowView.layer.shadowColor = UIColor.black.cgColor
+        shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
+        
     }
     
-    
-    //MARK: - No Content Handle
     func showEmptyLabel() {
-        if let _ = emptyLabel {
-            return
+        DispatchQueue.main.async {[unowned self] in
+            
+            if let _ = self.emptyLabel {
+                return
+            }
+            
+            self.emptyLabel = UILabel()
+
+            self.emptyLabel.translatesAutoresizingMaskIntoConstraints = false
+            
+            self.emptyLabel.text = "Nenhum conteúdo de jogo disponível."
+            self.emptyLabel.numberOfLines = 0
+            self.emptyLabel.textAlignment = .center
+            self.emptyLabel.backgroundColor = UIColor.white
+
+            self.view.addSubview(self.emptyLabel)
+            self.emptyLabel.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
+            self.emptyLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
+            self.emptyLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
+            self.emptyLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
+            
         }
-        
-        emptyLabel = UILabel()
-        self.view.addSubview(emptyLabel)
-
-        emptyLabel.translatesAutoresizingMaskIntoConstraints = false
-        
-        emptyLabel.text = "Nenhum conteúdo de jogo disponível."
-        emptyLabel.numberOfLines = 0
-        emptyLabel.textAlignment = .center
-        emptyLabel.backgroundColor = UIColor.white
-
-
-        emptyLabel.topAnchor.constraint(equalTo: self.view.topAnchor).isActive = true
-        emptyLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor).isActive = true
-        emptyLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor).isActive = true
-        emptyLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor).isActive = true
     }
     
     func hideEmptyLabel() {
-        guard let _ = emptyLabel else {
-            return
+        DispatchQueue.main.async {[unowned self] in
+            guard let _ = self.emptyLabel else {
+                return
+            }
+            
+            self.emptyLabel.removeFromSuperview()
+            self.emptyLabel = nil
         }
-        
-        emptyLabel.removeFromSuperview()
-        emptyLabel = nil
     }
     
 }

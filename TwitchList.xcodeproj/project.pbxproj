@@ -38,7 +38,6 @@
 		E248C2C21EC269B900F2EB2D /* GameListWireframe.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2C11EC269B900F2EB2D /* GameListWireframe.swift */; };
 		E248C2C41EC26A0600F2EB2D /* GameListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2C31EC26A0600F2EB2D /* GameListRouter.swift */; };
 		E248C2C61EC2A39F00F2EB2D /* GameDetailConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2C51EC2A39F00F2EB2D /* GameDetailConfiguration.swift */; };
-		E248C2C91EC2A5D300F2EB2D /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2C81EC2A5D300F2EB2D /* ImageDownloader.swift */; };
 		E248C2CB1EC2AA6C00F2EB2D /* ImageDownloadService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2CA1EC2AA6C00F2EB2D /* ImageDownloadService.swift */; };
 		E248C2CE1EC2AB4100F2EB2D /* HttpStatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2CD1EC2AB4100F2EB2D /* HttpStatusCode.swift */; };
 		E248C2D11EC2B6A000F2EB2D /* GameScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2D01EC2B6A000F2EB2D /* GameScreenViewController.swift */; };
@@ -156,7 +155,6 @@
 		E248C2C11EC269B900F2EB2D /* GameListWireframe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListWireframe.swift; sourceTree = "<group>"; };
 		E248C2C31EC26A0600F2EB2D /* GameListRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListRouter.swift; sourceTree = "<group>"; };
 		E248C2C51EC2A39F00F2EB2D /* GameDetailConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameDetailConfiguration.swift; sourceTree = "<group>"; };
-		E248C2C81EC2A5D300F2EB2D /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		E248C2CA1EC2AA6C00F2EB2D /* ImageDownloadService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadService.swift; sourceTree = "<group>"; };
 		E248C2CD1EC2AB4100F2EB2D /* HttpStatusCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HttpStatusCode.swift; sourceTree = "<group>"; };
 		E248C2D01EC2B6A000F2EB2D /* GameScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScreenViewController.swift; sourceTree = "<group>"; };
@@ -319,14 +317,6 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
-		E248C2C71EC2A58A00F2EB2D /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				E248C2C81EC2A5D300F2EB2D /* ImageDownloader.swift */,
-			);
-			name = Tools;
-			sourceTree = "<group>";
-		};
 		E248C2CC1EC2AB1B00F2EB2D /* Enumeration */ = {
 			isa = PBXGroup;
 			children = (
@@ -410,7 +400,6 @@
 			isa = PBXGroup;
 			children = (
 				E248C2CC1EC2AB1B00F2EB2D /* Enumeration */,
-				E248C2C71EC2A58A00F2EB2D /* Tools */,
 				E248C2711EC1FEE600F2EB2D /* Config */,
 				E248C28E1EC2287500F2EB2D /* Models */,
 				E248C2551EC0EB3F00F2EB2D /* Networking */,
@@ -643,7 +632,6 @@
 				E248C2AF1EC2418800F2EB2D /* GameCell.swift in Sources */,
 				E248C26B1EC1F69300F2EB2D /* FunkingRequest.swift in Sources */,
 				E248C26E1EC1F69300F2EB2D /* FunkTheRest.swift in Sources */,
-				E248C2C91EC2A5D300F2EB2D /* ImageDownloader.swift in Sources */,
 				E248C2C01EC268C600F2EB2D /* GameDetailPresenter.swift in Sources */,
 				E248C2C61EC2A39F00F2EB2D /* GameDetailConfiguration.swift in Sources */,
 				E248C2981EC22DEA00F2EB2D /* GameInfoList.swift in Sources */,

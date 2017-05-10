@@ -12,6 +12,7 @@ class GameListViewController: UIViewController  {
     
     var presenter : GameListInterface?
     var games : [GameInfo] = []
+    var refreshControl : UIRefreshControl!
     
     let justOneSection = 1
     
@@ -34,6 +35,7 @@ class GameListViewController: UIViewController  {
         configureCells()
         configureTableView()
         configureView()
+        configureRefreshControl()
     }
     
     func configureCells() {
@@ -49,7 +51,16 @@ class GameListViewController: UIViewController  {
     
     func configureView() {
         self.title = "Jogos Mais Populares"
-        
+    }
+    
+    func configureRefreshControl() {
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshHandler), for: .valueChanged)
+        tableView.addSubview(refreshControl)
+    }
+    
+    func refreshHandler() {
+        presenter?.getGames()
     }
     
 }
@@ -61,6 +72,7 @@ extension GameListViewController : GameListView {
         
         DispatchQueue.main.async { [unowned self] in
             self.tableView.reloadData()
+            self.refreshControl.endRefreshing()
         }
     }
 }
