@@ -123,10 +123,8 @@ extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
             }
         }
         
-        
         return cell
     }
-    
     
     //MARK: -- Delegate Methods 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -135,6 +133,10 @@ extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
 }
