@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		91163F231FA12F25004C6411 /* CoreDataMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91163F221FA12F25004C6411 /* CoreDataMappable.swift */; };
+		91B21EB61FA0EC9500B890E5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B21EB51FA0EC9500B890E5 /* CoreDataStack.swift */; };
+		91B21EB91FA0F54C00B890E5 /* GamesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91B21EB71FA0F54C00B890E5 /* GamesModel.xcdatamodeld */; };
 		E248C2601EC1F67F00F2EB2D /* Gettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C25D1EC1F67F00F2EB2D /* Gettable.swift */; };
 		E248C2611EC1F67F00F2EB2D /* NetworkingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C25E1EC1F67F00F2EB2D /* NetworkingResult.swift */; };
 		E248C2691EC1F69300F2EB2D /* FunkingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2631EC1F69300F2EB2D /* FunkingHelpers.swift */; };
@@ -148,6 +151,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		91163F221FA12F25004C6411 /* CoreDataMappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMappable.swift; sourceTree = "<group>"; };
+		91B21EB51FA0EC9500B890E5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		91B21EB81FA0F54C00B890E5 /* GamesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GamesModel.xcdatamodel; sourceTree = "<group>"; };
 		E248C25D1EC1F67F00F2EB2D /* Gettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gettable.swift; sourceTree = "<group>"; };
 		E248C25E1EC1F67F00F2EB2D /* NetworkingResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingResult.swift; sourceTree = "<group>"; };
 		E248C2631EC1F69300F2EB2D /* FunkingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunkingHelpers.swift; sourceTree = "<group>"; };
@@ -226,6 +232,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		918ABD491FA12DAA003BA266 /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				91163F221FA12F25004C6411 /* CoreDataMappable.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		91B21EAE1FA0EC7C00B890E5 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				91B21EB51FA0EC9500B890E5 /* CoreDataStack.swift */,
+				91B21EB71FA0F54C00B890E5 /* GamesModel.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
 		E248C2551EC0EB3F00F2EB2D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -454,6 +477,8 @@
 		E2F346401EB77E36001036F2 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				918ABD491FA12DAA003BA266 /* Protocol */,
+				91B21EAE1FA0EC7C00B890E5 /* CoreData */,
 				E248C2CC1EC2AB1B00F2EB2D /* Enumeration */,
 				E248C2711EC1FEE600F2EB2D /* Config */,
 				E248C28E1EC2287500F2EB2D /* Models */,
@@ -681,6 +706,7 @@
 				E248C2611EC1F67F00F2EB2D /* NetworkingResult.swift in Sources */,
 				E248C2941EC22BE900F2EB2D /* Game.swift in Sources */,
 				E248C2C21EC269B900F2EB2D /* GameListWireframe.swift in Sources */,
+				91B21EB61FA0EC9500B890E5 /* CoreDataStack.swift in Sources */,
 				E248C2AB1EC23ECC00F2EB2D /* GameListConfigurator.swift in Sources */,
 				E248C2A51EC23B3900F2EB2D /* GameListInterface.swift in Sources */,
 				E248C2B21EC2473E00F2EB2D /* GameListPresenter.swift in Sources */,
@@ -688,12 +714,14 @@
 				E248C26C1EC1F69300F2EB2D /* FunkingResponse.swift in Sources */,
 				E248C2A21EC23AF600F2EB2D /* GameListViewController.swift in Sources */,
 				E248C26A1EC1F69300F2EB2D /* FunkingMethod.swift in Sources */,
+				91B21EB91FA0F54C00B890E5 /* GamesModel.xcdatamodeld in Sources */,
 				E248C2601EC1F67F00F2EB2D /* Gettable.swift in Sources */,
 				E2CF6CC81EB77BFC007ECE43 /* AppDelegate.swift in Sources */,
 				E248C2A91EC23DF900F2EB2D /* GameListIO.swift in Sources */,
 				E248C2A71EC23B5300F2EB2D /* GameListView.swift in Sources */,
 				E248C2BE1EC260E600F2EB2D /* GameDetailInterface.swift in Sources */,
 				E248C2D11EC2B6A000F2EB2D /* GameScreenViewController.swift in Sources */,
+				91163F231FA12F25004C6411 /* CoreDataMappable.swift in Sources */,
 				E248C2691EC1F69300F2EB2D /* FunkingHelpers.swift in Sources */,
 				E248C2BC1EC260DB00F2EB2D /* GameDetailView.swift in Sources */,
 				E248C2701EC1FE9C00F2EB2D /* GameListService.swift in Sources */,
@@ -1002,6 +1030,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		91B21EB71FA0F54C00B890E5 /* GamesModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				91B21EB81FA0F54C00B890E5 /* GamesModel.xcdatamodel */,
+			);
+			currentVersion = 91B21EB81FA0F54C00B890E5 /* GamesModel.xcdatamodel */;
+			path = GamesModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E2CF6CBC1EB77BFC007ECE43 /* Project object */;
 }

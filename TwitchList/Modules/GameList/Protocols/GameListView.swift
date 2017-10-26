@@ -10,4 +10,6 @@ import Foundation
 
 protocol GameListView : class {
     func show(games:[GameInfo])
+    func showAlert(message:String?)
+    func hideRefreshing()
 }

@@ -8,6 +8,7 @@
 
 import ObjectMapper
 import Foundation
+import CoreData
 
 public struct ImageGroup : Mappable {
     
@@ -27,3 +28,23 @@ public struct ImageGroup : Mappable {
     
 }
 
+extension ImageGroup : CoreDataMappable {
+    public init(managedObject: NSManagedObject?) {
+        self.large      = managedObject?.value(forKey: "large") as? String
+        self.medium     = managedObject?.value(forKey: "medium") as? String
+        self.small      = managedObject?.value(forKey: "small") as? String
+        self.template   = managedObject?.value(forKey: "template") as? String
+    }
+    
+    public var managedObject: NSManagedObject? {
+        let moc = CoreDataStack.shared.managedObjectContext
+        guard let entity = NSEntityDescription.entity(forEntityName: "ImageGroupEntity", in:moc) else { return nil }
+        let object = NSManagedObject(entity: entity, insertInto: moc)
+        
+        object.setValue(large,      forKey: "large")
+        object.setValue(medium,     forKey: "medium")
+        object.setValue(small,      forKey: "small")
+        object.setValue(template,   forKey: "template")
+        return object
+    }
+}

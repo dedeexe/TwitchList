@@ -13,7 +13,6 @@ class GameListViewController: UIViewController  {
     var presenter : GameListInterface?
     var games : [GameInfo] = []
     var refreshControl : UIRefreshControl!
-    
     let justOneSection = 1
     
     @IBOutlet weak var tableView : UITableView!
@@ -29,7 +28,6 @@ class GameListViewController: UIViewController  {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
     
     //MARK: - Configurations
     func loadConfigurations() {
@@ -76,16 +74,28 @@ extension GameListViewController : GameListView {
         
         DispatchQueue.main.async { [unowned self] in
             self.tableView.reloadData()
+        }
+    }
+    
+    func showAlert(message: String?) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let button = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(button)
+        
+        DispatchQueue.main.async { [unowned self] in
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    func hideRefreshing() {
+        DispatchQueue.main.async { [unowned self] in
             self.refreshControl.endRefreshing()
         }
     }
 }
 
-
-
 //MARK: - TableView DataSource And Delegate
 extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
-    
     
     //MARK: -- DataSource Methods
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -111,7 +121,6 @@ extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
         cell.tag = indexPath.row
         cell.selectionStyle = .none
         cell.gameNameLabel.text = gameInfo.game?.name
-        
         
         ImageDownloadService(url: gameInfo.game?.box?.large ?? "").get { result in
             if case .success(_, let content) = result {

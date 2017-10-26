@@ -35,7 +35,6 @@ struct ImageDownloadService : Gettable {
                         completion(FunkingResult<DataType>.success(code, image))
                 }
             }
-        
     }
     
 }

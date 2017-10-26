@@ -12,30 +12,37 @@ import ObjectMapper
 class GameListDefaultInteractor : GameListInteractorInput
 {
     weak var output : GameListInteractorOutput?
+    let persistService = PersistService()
     
     func searchGames(pageSize:Int=50, pageNumber:Int=0) {
         
         let gameService = GameListService(pageSize: pageSize, page: pageNumber)
         
         gameService.get { [unowned self] result in
-            if case .success(let status, let games) = result {
-                NSLog("Game Request Status: \(status)")
-                self.output?.fetchGames(games: games)
-                self.save(content: games.toJSONString() ?? "", to: AppConfig.storeFile)
-                return
+            switch result {
+                case .success(let status, let games):
+                    NSLog("Game Request Status: \(status)")
+                    self.output?.fetchGames(games: games)
+                    self.save(gameInfoList: games)
+                    return
+                case .error(let err as NSError):
+                    self.output?.error(code: err.code, message: err.localizedDescription)
             }
             
-            let json = self.restore(from: AppConfig.storeFile)
-            let games = Mapper<GameInfoList>().map(JSONString: json ?? "{}") ?? GameInfoList()
+            let games = self.restore()
             self.output?.fetchGames(games: games)
         }
     }
     
-    func save(content:String, to file:String) {
-        PersistService(on: file).save(content: content)
+    func save(gameInfoList:GameInfoList) {
+        persistService.save(games: gameInfoList)
     }
     
-    func restore(from file:String) -> String? {
-        return PersistService(on: file).restore()
+    func restore() -> GameInfoList {
+        let games = persistService.restore()
+        var gameList = GameInfoList()
+        gameList.total = games.count
+        gameList.top = games
+        return gameList
     }
 }
