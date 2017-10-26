@@ -1,27 +1,22 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13241" systemVersion="" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="GameEntity" representedClassName="GameEntity" syncable="YES">
+        <attribute name="boxLarge" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="boxMedium" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="boxSmall" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="boxTemplate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="channels" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="giantBombId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="imageLarge" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageMedium" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageSmall" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imageTemplate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="popularity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="box" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageGroupEntity" syncable="YES"/>
-        <relationship name="logo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageGroupEntity" syncable="YES"/>
-    </entity>
-    <entity name="GameInfoEntity" representedClassName="GameInfoEntity" syncable="YES">
-        <attribute name="channels" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="viewers" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <relationship name="game" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GameEntity" syncable="YES"/>
-    </entity>
-    <entity name="ImageGroupEntity" representedClassName="ImageGroupEntity" syncable="YES">
-        <attribute name="large" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="medium" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="small" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="template" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="views" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ImageGroupEntity" positionX="-63" positionY="-18" width="128" height="105"/>
-        <element name="GameEntity" positionX="-54" positionY="18" width="128" height="135"/>
-        <element name="GameInfoEntity" positionX="-45" positionY="72" width="128" height="90"/>
+        <element name="GameEntity" positionX="-54" positionY="18" width="128" height="253"/>
     </elements>
 </model>

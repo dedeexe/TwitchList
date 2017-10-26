@@ -11,5 +11,5 @@ import Foundation
 
 protocol GameListInterface : class{
     func getGames()
-    func gotoGameDetail(of game:GameInfo)
+    func gotoGameDetail(of game:Game)
 }

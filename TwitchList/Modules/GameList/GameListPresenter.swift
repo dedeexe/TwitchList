@@ -30,7 +30,7 @@ public class GameListPresenter : GameListInterface, GameListInteractorOutput {
         input?.searchGames(pageSize: 50, pageNumber: 0)
     }
     
-    func gotoGameDetail(of game: GameInfo) {
+    func gotoGameDetail(of game: Game) {
         router?.gotoGameDetail(of: game)
     }
     

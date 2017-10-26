@@ -10,7 +10,7 @@ import UIKit
 
 class GameDetailViewController: UIViewController, GameDetailView {
     
-    var gameInfo    : GameInfo?
+    var gameInfo    : Game?
     var presenter   : GameDetailInterface?
     var emptyLabel  : UILabel!
     

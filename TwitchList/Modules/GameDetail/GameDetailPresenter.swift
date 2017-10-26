@@ -11,38 +11,36 @@ import UIKit
 class GameDetailPresenter : GameDetailInterface {
     
     weak var view : GameDetailView?
-    var gameInfo : GameInfo?
+    var game : Game?
     
-    func getDetail(of gameInfo: GameInfo?) {
-        
-        guard let gameInfo = gameInfo else {
+    func getDetail(of game: Game?) {
+        guard let game = game else {
             view?.showNoGameInfo()
             return
         }
         
-        self.gameInfo = gameInfo
+        self.game = game
         
         view?.hideNoGameInfo()
         
-        view?.showGame(name:        self.gameInfo?.game?.name)
-        view?.showGame(views:       self.gameInfo?.viewers)
-        view?.showGame(channels:    self.gameInfo?.channels)
+        view?.showGame(name:        self.game?.name)
+        view?.showGame(views:       self.game?.viewers)
+        view?.showGame(channels:    self.game?.channels)
         
         getLogo()
         getBanner()
-        
     }
     
     
     func getLogo() {
-        let service = ImageDownloadService(url: self.gameInfo?.game?.logo?.small ?? "")
+        let service = ImageDownloadService(url: self.game?.logoSmall ?? "")
         getImage(from: service) { [unowned self] image in
             self.view?.showGame(image: image)
         }
     }
     
     func getBanner() {
-        let service = ImageDownloadService(url: self.gameInfo?.game?.box?.large ?? "")
+        let service = ImageDownloadService(url: self.game?.boxLarge ?? "")
         getImage(from: service) { [unowned self] image in
             self.view?.showGame(banner: image)
         }

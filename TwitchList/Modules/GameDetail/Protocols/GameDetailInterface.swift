@@ -10,6 +10,6 @@ import Foundation
 
 public protocol GameDetailInterface : class {
     
-    func getDetail(of gameInfo:GameInfo?)
+    func getDetail(of gameInfo:Game?)
     
 }

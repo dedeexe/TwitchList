@@ -9,5 +9,5 @@
 import Foundation
 
 public protocol GameListWireframe : class {
-    func gotoGameDetail(of game:GameInfo)
+    func gotoGameDetail(of game:Game)
 }

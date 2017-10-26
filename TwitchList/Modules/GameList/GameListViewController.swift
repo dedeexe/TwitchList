@@ -11,7 +11,7 @@ import UIKit
 class GameListViewController: UIViewController  {
     
     var presenter : GameListInterface?
-    var games : [GameInfo] = []
+    var games : [Game] = []
     var refreshControl : UIRefreshControl!
     let justOneSection = 1
     
@@ -69,7 +69,7 @@ class GameListViewController: UIViewController  {
 
 //MARK: - GameListView Implementations
 extension GameListViewController : GameListView {
-    func show(games: [GameInfo]) {
+    func show(games: [Game]) {
         self.games = games
         
         DispatchQueue.main.async { [unowned self] in
@@ -109,20 +109,20 @@ extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = String(describing: GameCell.self)
         
-        let gameInfo = games[indexPath.row]
+        let game = games[indexPath.row]
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? GameCell else {
             let defaultCell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-            defaultCell.textLabel?.text = gameInfo.game?.name
+            defaultCell.textLabel?.text = game.name
             defaultCell.selectionStyle = .none
             return defaultCell
         }
         
         cell.tag = indexPath.row
         cell.selectionStyle = .none
-        cell.gameNameLabel.text = gameInfo.game?.name
+        cell.gameNameLabel.text = game.name
         
-        ImageDownloadService(url: gameInfo.game?.box?.large ?? "").get { result in
+        ImageDownloadService(url: game.boxLarge ?? "").get { result in
             if case .success(_, let content) = result {
                 DispatchQueue.main.async {
                     if cell.tag == indexPath.row {

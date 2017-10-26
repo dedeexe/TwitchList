@@ -17,7 +17,7 @@ class GameListRouter : GameListWireframe {
         viewController = reference
     }
     
-    func gotoGameDetail(of game: GameInfo) {
+    func gotoGameDetail(of game: Game) {
         guard let vc = viewController?.storyboard?.instantiateViewController(withIdentifier: "GameDetail") as? GameDetailViewController else {
             return
         }

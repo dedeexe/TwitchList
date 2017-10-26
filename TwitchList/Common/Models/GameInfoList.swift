@@ -12,7 +12,7 @@ import Foundation
 public struct GameInfoList : Mappable {
     
     public var total       : Int?
-    public var top         : [GameInfo]?
+    public var top         : [Game]?
     
     public init() {
         total = 0
