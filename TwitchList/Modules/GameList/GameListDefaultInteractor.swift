@@ -39,11 +39,10 @@ class GameListDefaultInteractor : GameListInteractorInput
     }
     
     func restore() -> GameInfoList {
-        return GameInfoList()
-//        let games = persistService.restore()
-//        var gameList = GameInfoList()
-//        gameList.total = games.count
-//        gameList.top = games
-//        return gameList
+        let games = persistService.restore()
+        var gameList = GameInfoList()
+        gameList.total = games.count
+        gameList.top = games
+        return gameList
     }
 }

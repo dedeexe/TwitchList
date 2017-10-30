@@ -10,6 +10,8 @@
 		91163F231FA12F25004C6411 /* CoreDataMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91163F221FA12F25004C6411 /* CoreDataMappable.swift */; };
 		91B21EB61FA0EC9500B890E5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91B21EB51FA0EC9500B890E5 /* CoreDataStack.swift */; };
 		91B21EB91FA0F54C00B890E5 /* GamesModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 91B21EB71FA0F54C00B890E5 /* GamesModel.xcdatamodeld */; };
+		91ECE7331FA76BD7009D6D30 /* GameContentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91ECE7311FA76BD7009D6D30 /* GameContentCell.swift */; };
+		91ECE7341FA76BD7009D6D30 /* GameContentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91ECE7321FA76BD7009D6D30 /* GameContentCell.xib */; };
 		E248C2601EC1F67F00F2EB2D /* Gettable.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C25D1EC1F67F00F2EB2D /* Gettable.swift */; };
 		E248C2611EC1F67F00F2EB2D /* NetworkingResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C25E1EC1F67F00F2EB2D /* NetworkingResult.swift */; };
 		E248C2691EC1F69300F2EB2D /* FunkingHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2631EC1F69300F2EB2D /* FunkingHelpers.swift */; };
@@ -20,9 +22,7 @@
 		E248C26E1EC1F69300F2EB2D /* FunkTheRest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2681EC1F69300F2EB2D /* FunkTheRest.swift */; };
 		E248C2701EC1FE9C00F2EB2D /* GameListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C26F1EC1FE9C00F2EB2D /* GameListService.swift */; };
 		E248C2731EC1FEFF00F2EB2D /* AppConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2721EC1FEFF00F2EB2D /* AppConfig.swift */; };
-		E248C2901EC2290D00F2EB2D /* ImageGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C28F1EC2290D00F2EB2D /* ImageGroup.swift */; };
 		E248C2941EC22BE900F2EB2D /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2931EC22BE900F2EB2D /* Game.swift */; };
-		E248C2961EC22D6700F2EB2D /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2951EC22D6700F2EB2D /* GameInfo.swift */; };
 		E248C2981EC22DEA00F2EB2D /* GameInfoList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2971EC22DEA00F2EB2D /* GameInfoList.swift */; };
 		E248C29A1EC2342800F2EB2D /* EndPointRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2991EC2342800F2EB2D /* EndPointRoute.swift */; };
 		E248C2A21EC23AF600F2EB2D /* GameListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E248C2A11EC23AF600F2EB2D /* GameListViewController.swift */; };
@@ -154,6 +154,8 @@
 		91163F221FA12F25004C6411 /* CoreDataMappable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataMappable.swift; sourceTree = "<group>"; };
 		91B21EB51FA0EC9500B890E5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		91B21EB81FA0F54C00B890E5 /* GamesModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GamesModel.xcdatamodel; sourceTree = "<group>"; };
+		91ECE7311FA76BD7009D6D30 /* GameContentCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameContentCell.swift; sourceTree = "<group>"; };
+		91ECE7321FA76BD7009D6D30 /* GameContentCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameContentCell.xib; sourceTree = "<group>"; };
 		E248C25D1EC1F67F00F2EB2D /* Gettable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gettable.swift; sourceTree = "<group>"; };
 		E248C25E1EC1F67F00F2EB2D /* NetworkingResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkingResult.swift; sourceTree = "<group>"; };
 		E248C2631EC1F69300F2EB2D /* FunkingHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FunkingHelpers.swift; sourceTree = "<group>"; };
@@ -165,9 +167,7 @@
 		E248C26F1EC1FE9C00F2EB2D /* GameListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListService.swift; sourceTree = "<group>"; };
 		E248C2721EC1FEFF00F2EB2D /* AppConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfig.swift; sourceTree = "<group>"; };
 		E248C2741EC2269900F2EB2D /* ObjectMapper.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ObjectMapper.xcodeproj; path = ThirdParties/ObjectMapper/ObjectMapper.xcodeproj; sourceTree = "<group>"; };
-		E248C28F1EC2290D00F2EB2D /* ImageGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageGroup.swift; sourceTree = "<group>"; };
 		E248C2931EC22BE900F2EB2D /* Game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		E248C2951EC22D6700F2EB2D /* GameInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		E248C2971EC22DEA00F2EB2D /* GameInfoList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInfoList.swift; sourceTree = "<group>"; };
 		E248C2991EC2342800F2EB2D /* EndPointRoute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPointRoute.swift; sourceTree = "<group>"; };
 		E248C2A11EC23AF600F2EB2D /* GameListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameListViewController.swift; sourceTree = "<group>"; };
@@ -308,9 +308,7 @@
 		E248C28E1EC2287500F2EB2D /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				E248C28F1EC2290D00F2EB2D /* ImageGroup.swift */,
 				E248C2931EC22BE900F2EB2D /* Game.swift */,
-				E248C2951EC22D6700F2EB2D /* GameInfo.swift */,
 				E248C2971EC22DEA00F2EB2D /* GameInfoList.swift */,
 			);
 			path = Models;
@@ -346,6 +344,8 @@
 			children = (
 				E248C2AD1EC2418800F2EB2D /* GameCell.swift */,
 				E248C2AE1EC2418800F2EB2D /* GameCell.xib */,
+				91ECE7311FA76BD7009D6D30 /* GameContentCell.swift */,
+				91ECE7321FA76BD7009D6D30 /* GameContentCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -679,6 +679,7 @@
 				E2CF6CCF1EB77BFC007ECE43 /* Assets.xcassets in Resources */,
 				E2CF6CCD1EB77BFC007ECE43 /* Main.storyboard in Resources */,
 				E248C2B01EC2418800F2EB2D /* GameCell.xib in Resources */,
+				91ECE7341FA76BD7009D6D30 /* GameContentCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,13 +711,13 @@
 				E248C2AB1EC23ECC00F2EB2D /* GameListConfigurator.swift in Sources */,
 				E248C2A51EC23B3900F2EB2D /* GameListInterface.swift in Sources */,
 				E248C2B21EC2473E00F2EB2D /* GameListPresenter.swift in Sources */,
-				E248C2901EC2290D00F2EB2D /* ImageGroup.swift in Sources */,
 				E248C26C1EC1F69300F2EB2D /* FunkingResponse.swift in Sources */,
 				E248C2A21EC23AF600F2EB2D /* GameListViewController.swift in Sources */,
 				E248C26A1EC1F69300F2EB2D /* FunkingMethod.swift in Sources */,
 				91B21EB91FA0F54C00B890E5 /* GamesModel.xcdatamodeld in Sources */,
 				E248C2601EC1F67F00F2EB2D /* Gettable.swift in Sources */,
 				E2CF6CC81EB77BFC007ECE43 /* AppDelegate.swift in Sources */,
+				91ECE7331FA76BD7009D6D30 /* GameContentCell.swift in Sources */,
 				E248C2A91EC23DF900F2EB2D /* GameListIO.swift in Sources */,
 				E248C2A71EC23B5300F2EB2D /* GameListView.swift in Sources */,
 				E248C2BE1EC260E600F2EB2D /* GameDetailInterface.swift in Sources */,
@@ -729,7 +730,6 @@
 				E248C2B41EC2487800F2EB2D /* GameListDefaultInteractor.swift in Sources */,
 				E248C26D1EC1F69300F2EB2D /* FunkingResult.swift in Sources */,
 				E248C29A1EC2342800F2EB2D /* EndPointRoute.swift in Sources */,
-				E248C2961EC22D6700F2EB2D /* GameInfo.swift in Sources */,
 				E248C2731EC1FEFF00F2EB2D /* AppConfig.swift in Sources */,
 				E248C2CB1EC2AA6C00F2EB2D /* ImageDownloadService.swift in Sources */,
 				E2FF2F381EC2E840002EDC13 /* PersistService.swift in Sources */,

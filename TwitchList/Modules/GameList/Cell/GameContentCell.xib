@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GameContentCell" customModule="TwitchList" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="445" height="268"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="445" height="268"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vna-vm-FFO">
+                        <rect key="frame" x="0.0" y="0.0" width="445" height="268"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Iby-3r-Qhd">
+                                <rect key="frame" x="0.0" y="0.0" width="445" height="268.5"/>
+                            </imageView>
+                            <view alpha="0.44999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAG-Ll-p5c">
+                                <rect key="frame" x="0.0" y="239" width="445" height="29"/>
+                                <color key="backgroundColor" red="0.32156862749999998" green="0.3294117647" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="prD-bu-xEH">
+                                <rect key="frame" x="0.0" y="239" width="445" height="29"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rh-Rp-b4D">
+                                        <rect key="frame" x="4" y="4" width="437" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                        <color key="textColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="7rh-Rp-b4D" secondAttribute="trailing" constant="4" id="1hI-he-Pxm"/>
+                                    <constraint firstItem="7rh-Rp-b4D" firstAttribute="top" secondItem="prD-bu-xEH" secondAttribute="top" constant="4" id="SDy-FB-cXP"/>
+                                    <constraint firstAttribute="bottom" secondItem="7rh-Rp-b4D" secondAttribute="bottom" constant="4" id="Trn-kE-QPw"/>
+                                    <constraint firstItem="7rh-Rp-b4D" firstAttribute="leading" secondItem="prD-bu-xEH" secondAttribute="leading" constant="4" id="mGb-K4-UDJ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="prD-bu-xEH" secondAttribute="trailing" id="26u-0y-WQf"/>
+                            <constraint firstAttribute="trailing" secondItem="Iby-3r-Qhd" secondAttribute="trailing" id="CLU-SP-RZH"/>
+                            <constraint firstItem="Iby-3r-Qhd" firstAttribute="top" secondItem="Vna-vm-FFO" secondAttribute="top" id="Lhb-dr-s5B"/>
+                            <constraint firstAttribute="bottom" secondItem="Iby-3r-Qhd" secondAttribute="bottom" id="NvP-3M-fA6"/>
+                            <constraint firstItem="prD-bu-xEH" firstAttribute="top" secondItem="sAG-Ll-p5c" secondAttribute="top" id="Qxs-hM-ECj"/>
+                            <constraint firstItem="prD-bu-xEH" firstAttribute="trailing" secondItem="sAG-Ll-p5c" secondAttribute="trailing" id="ZAj-8B-EDl"/>
+                            <constraint firstItem="Iby-3r-Qhd" firstAttribute="leading" secondItem="Vna-vm-FFO" secondAttribute="leading" id="bJW-t5-3RK"/>
+                            <constraint firstItem="prD-bu-xEH" firstAttribute="leading" secondItem="sAG-Ll-p5c" secondAttribute="leading" id="boo-sN-83T"/>
+                            <constraint firstAttribute="bottom" secondItem="prD-bu-xEH" secondAttribute="bottom" id="cqn-jW-Q9Q"/>
+                            <constraint firstItem="prD-bu-xEH" firstAttribute="leading" secondItem="Vna-vm-FFO" secondAttribute="leading" id="nTw-Fa-Rn8"/>
+                            <constraint firstItem="prD-bu-xEH" firstAttribute="bottom" secondItem="sAG-Ll-p5c" secondAttribute="bottom" id="vRm-Zm-pC4"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Vna-vm-FFO" secondAttribute="trailing" id="6hK-gQ-h8d"/>
+                <constraint firstAttribute="bottom" secondItem="Vna-vm-FFO" secondAttribute="bottom" id="KI2-xQ-m5f"/>
+                <constraint firstItem="Vna-vm-FFO" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="QZx-rM-DIp"/>
+                <constraint firstItem="Vna-vm-FFO" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="m1M-46-858"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="445" height="268"/>
+            <connections>
+                <outlet property="containerView" destination="Vna-vm-FFO" id="1d4-GS-3cj"/>
+                <outlet property="gameImageView" destination="Iby-3r-Qhd" id="vlp-hG-dwl"/>
+                <outlet property="gameNameLabel" destination="7rh-Rp-b4D" id="tOU-aY-Ue6"/>
+            </connections>
+            <point key="canvasLocation" x="38.5" y="-7"/>
+        </collectionViewCell>
+    </objects>
+</document>

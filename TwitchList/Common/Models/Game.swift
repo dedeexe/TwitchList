@@ -13,11 +13,11 @@ import CoreData
 public struct Game : Mappable {
     
     public var id               : Int?
-   // public var box              : ImageGroup?
-    public var giantBombId      : String?
-    //public var logo             : ImageGroup?
     public var name             : String?
+    public var giantBombId      : String?
     public var popularity       : Int?
+    
+    public var timestamp        : Double? = Date().timeIntervalSince1970
     
     public var boxLarge         : String?
     public var boxMedium        : String?
@@ -31,6 +31,7 @@ public struct Game : Mappable {
 
     public var viewers          : Int?
     public var channels         : Int?
+    
     
     public init?(map: Map) {}
     
@@ -61,9 +62,21 @@ extension Game : CoreDataMappable {
         self.giantBombId    = managedObject?.value(forKey: "giantBombId") as? String
         self.name           = managedObject?.value(forKey: "name") as? String
         self.popularity     = managedObject?.value(forKey: "popularity") as? Int
+
+        self.boxLarge       = managedObject?.value(forKey: "boxLarge") as? String
+        self.boxMedium      = managedObject?.value(forKey: "boxMedium") as? String
+        self.boxSmall       = managedObject?.value(forKey: "boxSmall") as? String
+        self.boxTemplate    = managedObject?.value(forKey: "boxTemplate") as? String
+
+        self.logoLarge      = managedObject?.value(forKey: "logoLarge") as? String
+        self.logoMedium     = managedObject?.value(forKey: "logoMedium") as? String
+        self.logoSmall      = managedObject?.value(forKey: "logoSmall") as? String
+        self.logoTemplate   = managedObject?.value(forKey: "logoTemplate") as? String
         
-        //self.box            = ImageGroup(managedObject: managedObject?.value(forKey: "box") as? NSManagedObject)
-        //self.logo           = ImageGroup(managedObject: managedObject?.value(forKey: "logo") as? NSManagedObject)
+        self.viewers        = managedObject?.value(forKey: "viewers") as? Int
+        self.channels       = managedObject?.value(forKey: "channels") as? Int
+        self.timestamp      = managedObject?.value(forKey: "timestamp") as? Double
+
     }
     
     public var managedObject: NSManagedObject? {
@@ -74,10 +87,22 @@ extension Game : CoreDataMappable {
         object.setValue(id,                         forKey: "id")
         object.setValue(giantBombId,                forKey: "giantBombId")
         object.setValue(name,                       forKey: "name")
-        object.setValue(popularity as NSNumber?,    forKey: "popularity")
+        object.setValue(popularity,                 forKey: "popularity")
+
+        object.setValue(boxLarge,                   forKey: "boxLarge")
+        object.setValue(boxMedium,                  forKey: "boxMedium")
+        object.setValue(boxSmall,                   forKey: "boxSmall")
+        object.setValue(boxTemplate,                forKey: "boxTemplate")
+
+        object.setValue(logoLarge,                  forKey: "logoLarge")
+        object.setValue(logoMedium,                 forKey: "logoMedium")
+        object.setValue(logoSmall,                  forKey: "logoSmall")
+        object.setValue(logoTemplate,               forKey: "logoTemplate")
+
+        object.setValue(viewers,                    forKey: "viewers")
+        object.setValue(channels,                   forKey: "channels")
+        object.setValue(timestamp,                  forKey: "timestamp")
         
-        //object.setValue(box?.managedObject, forKey: "box")
-        //object.setValue(logo?.managedObject, forKey: "logo")
         return object
     }
 }

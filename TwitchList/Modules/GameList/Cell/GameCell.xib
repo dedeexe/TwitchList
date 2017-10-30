@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -21,17 +20,17 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OgJ-HS-Bjl">
-                        <rect key="frame" x="8" y="8" width="304" height="120"/>
+                        <rect key="frame" x="8" y="8" width="304" height="140.5"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZRP-eQ-mC4">
-                                <rect key="frame" x="0.0" y="0.0" width="304" height="120.5"/>
+                                <rect key="frame" x="0.0" y="0.0" width="304" height="141"/>
                             </imageView>
                             <view alpha="0.45000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QrN-ij-sFJ">
-                                <rect key="frame" x="0.0" y="91" width="304" height="29"/>
+                                <rect key="frame" x="0.0" y="111.5" width="304" height="29"/>
                                 <color key="backgroundColor" red="0.32156862749999998" green="0.3294117647" blue="0.35686274509999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZRp-iL-Ie0">
-                                <rect key="frame" x="0.0" y="91" width="304" height="29"/>
+                                <rect key="frame" x="0.0" y="111.5" width="304" height="29"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZmL-4L-ro2">
                                         <rect key="frame" x="4" y="4" width="296" height="21"/>
@@ -51,7 +50,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZRp-iL-Ie0" firstAttribute="trailing" secondItem="QrN-ij-sFJ" secondAttribute="trailing" id="0MG-YM-bCL"/>
-                            <constraint firstAttribute="width" secondItem="OgJ-HS-Bjl" secondAttribute="height" multiplier="38:15" id="2LB-BY-3VA"/>
                             <constraint firstItem="ZRp-iL-Ie0" firstAttribute="leading" secondItem="OgJ-HS-Bjl" secondAttribute="leading" id="4mc-JB-PkF"/>
                             <constraint firstAttribute="bottom" secondItem="ZRP-eQ-mC4" secondAttribute="bottom" id="5PD-be-Vc7"/>
                             <constraint firstItem="ZRp-iL-Ie0" firstAttribute="leading" secondItem="QrN-ij-sFJ" secondAttribute="leading" id="Ibt-Wm-PzA"/>
@@ -59,7 +57,6 @@
                             <constraint firstAttribute="trailing" secondItem="ZRP-eQ-mC4" secondAttribute="trailing" id="RaC-Bp-4dz"/>
                             <constraint firstAttribute="trailing" secondItem="ZRp-iL-Ie0" secondAttribute="trailing" id="btp-nk-xa1"/>
                             <constraint firstItem="ZRP-eQ-mC4" firstAttribute="leading" secondItem="OgJ-HS-Bjl" secondAttribute="leading" id="cKK-b7-KYX"/>
-                            <constraint firstAttribute="height" constant="120" id="e9A-gz-qfk"/>
                             <constraint firstItem="ZRP-eQ-mC4" firstAttribute="top" secondItem="OgJ-HS-Bjl" secondAttribute="top" id="fIk-2d-BHg"/>
                             <constraint firstAttribute="bottom" secondItem="ZRp-iL-Ie0" secondAttribute="bottom" id="tNV-yV-Nfj"/>
                             <constraint firstItem="ZRp-iL-Ie0" firstAttribute="bottom" secondItem="QrN-ij-sFJ" secondAttribute="bottom" id="xXP-SH-zyI"/>
@@ -69,7 +66,7 @@
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="OgJ-HS-Bjl" secondAttribute="trailing" id="Iea-tG-JgL"/>
-                    <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="OgJ-HS-Bjl" secondAttribute="bottom" id="KOd-6k-fMU"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="OgJ-HS-Bjl" secondAttribute="bottom" id="KOd-6k-fMU"/>
                     <constraint firstItem="OgJ-HS-Bjl" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Z00-Yv-Zol"/>
                     <constraint firstItem="OgJ-HS-Bjl" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="dcS-5d-BMI"/>
                 </constraints>

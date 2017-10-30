@@ -12,17 +12,16 @@ import ObjectMapper
 public struct GameListService : Gettable {
     
     public typealias DataType = GameInfoList
-    
     public var pageSize     : Int = 50
     public var page         : Int = 0
     
     public func get(completion: @escaping (FunkingResult<GameInfoList>) -> Void)
     {
-        let url = AppConfig.baseURL.appending(EndPoint.topGames.rawValue)
+        let url = AppConfig.baseURL.appending(EndPoint.topGames.rawValue).appending("?limit=\(pageSize)&offset=\(page)")
+        
         FunkTheRest.get(url)
             .addHeader("Client-ID", value: "\(AppConfig.token)")
-            .addParameter("limit", value: String(pageSize))
-            .addParameter("offset", value: String(page))
+            .addHeader("Accept", value: "application/vnd.twitchtv.v5+json")
             .response { (result) in
                 switch result {
                     case .error(let err):

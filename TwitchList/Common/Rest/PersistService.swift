@@ -35,24 +35,25 @@ class PersistService {
                     print("Jogos salvos com sucesso!")
                 } catch {
                     print("Error: \(error)")
+                    print("Falha ao salvos Jogos!")
                 }
             }
         }
     }
     
-    func restore() -> [GameInfo] {
+    func restore() -> [Game] {
         let moc = CoreDataStack.shared.managedObjectContext
-        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "GameInfoEntity")
-        
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "GameEntity")
+        let sort = NSSortDescriptor(key: "timestamp", ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+
         do {
             guard let games = try moc.fetch(fetchRequest) as? [NSManagedObject] else { return [] }
-            let convertedGames = games.flatMap{ GameInfo(managedObject: $0) }
+            let convertedGames = games.flatMap{ Game(managedObject: $0) }
             return convertedGames
         } catch {
             return []
         }
-        
-        return []
     }
     
 }

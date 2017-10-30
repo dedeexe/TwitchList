@@ -15,19 +15,30 @@ public class GameListPresenter : GameListInterface, GameListInteractorOutput {
     var input : GameListInteractorInput?
     var router : GameListWireframe?
     var firstTime : Bool = true
+    var pageSize = 60
+    var offset = 0
+    
+    var games : [Game] = []
+    var pullRefresh : Bool = false
     
     func getGames() {
         
         if firstTime {
-            CoreDataStack.onInit = {[weak self] in
-                self?.input?.searchGames(pageSize: 50, pageNumber: 0)
+            CoreDataStack.onInit = {[unowned self] in
+                self.input?.searchGames(pageSize: self.pageSize, pageNumber: self.offset)
             }
             _ = CoreDataStack.shared
             firstTime = false
             return
         }
         
-        input?.searchGames(pageSize: 50, pageNumber: 0)
+        input?.searchGames(pageSize: pageSize, pageNumber: offset)
+    }
+    
+    func getFirstsGames() {
+        pullRefresh = true
+        offset = 0
+        getGames()
     }
     
     func gotoGameDetail(of game: Game) {
@@ -36,7 +47,16 @@ public class GameListPresenter : GameListInterface, GameListInteractorOutput {
     
     public func fetchGames(games: GameInfoList) {
         let gameList = games.top ?? []
-        view?.show(games: gameList)
+        
+        if pullRefresh {
+            self.games.removeAll()
+            pullRefresh = false
+        }
+        
+        self.games.append(contentsOf: gameList)
+        offset = self.games.count
+        
+        view?.show(games: self.games)
         view?.hideRefreshing()
     }
 

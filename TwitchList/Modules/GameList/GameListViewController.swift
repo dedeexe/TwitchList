@@ -14,15 +14,16 @@ class GameListViewController: UIViewController  {
     var games : [Game] = []
     var refreshControl : UIRefreshControl!
     let justOneSection = 1
+    let offsetPage = 20
     
-    @IBOutlet weak var tableView : UITableView!
+    var contentSize = CGSize(width: 0, height: 0)
+    
+    @IBOutlet weak var collectionView : UICollectionView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadConfigurations()
         presenter?.getGames()
-        
-        print(NSHomeDirectory())
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +33,7 @@ class GameListViewController: UIViewController  {
     //MARK: - Configurations
     func loadConfigurations() {
         GameListConfigurator.shared.configure(view: self)
+        contentSize = collectionView.frame.size
         configureCells()
         configureTableView()
         configureView()
@@ -39,16 +41,14 @@ class GameListViewController: UIViewController  {
     }
     
     func configureCells() {
-        let identifier = String(describing: GameCell.self)
+        let identifier = String(describing: GameContentCell.self)
         let nib = UINib(nibName: identifier, bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: identifier)
+        collectionView.register(nib, forCellWithReuseIdentifier: identifier)
     }
     
     func configureTableView() {
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.estimatedRowHeight = UITableViewAutomaticDimension
-        tableView.separatorStyle = .none
+        collectionView.dataSource = self
+        collectionView.delegate = self
     }
     
     func configureView() {
@@ -58,11 +58,11 @@ class GameListViewController: UIViewController  {
     func configureRefreshControl() {
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshHandler), for: .valueChanged)
-        tableView.addSubview(refreshControl)
+        collectionView.addSubview(refreshControl)
     }
     
     func refreshHandler() {
-        presenter?.getGames()
+        presenter?.getFirstsGames()
     }
     
 }
@@ -73,7 +73,7 @@ extension GameListViewController : GameListView {
         self.games = games
         
         DispatchQueue.main.async { [unowned self] in
-            self.tableView.reloadData()
+            self.collectionView.reloadData()
         }
     }
     
@@ -92,36 +92,39 @@ extension GameListViewController : GameListView {
             self.refreshControl.endRefreshing()
         }
     }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        contentSize = collectionView.frame.size
+        collectionView.collectionViewLayout.invalidateLayout()
+    }
 }
 
 //MARK: - TableView DataSource And Delegate
-extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
+extension GameListViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     //MARK: -- DataSource Methods
-    func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return justOneSection
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return games.count
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = String(describing: GameCell.self)
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let identifier = String(describing: GameContentCell.self)
         
         let game = games[indexPath.row]
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as? GameCell else {
-            let defaultCell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-            defaultCell.textLabel?.text = game.name
-            defaultCell.selectionStyle = .none
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as? GameContentCell else {
+            let defaultCell = UICollectionViewCell()
             return defaultCell
         }
-        
+
         cell.tag = indexPath.row
-        cell.selectionStyle = .none
         cell.gameNameLabel.text = game.name
-        
+
         ImageDownloadService(url: game.boxLarge ?? "").get { result in
             if case .success(_, let content) = result {
                 DispatchQueue.main.async {
@@ -131,21 +134,33 @@ extension GameListViewController: UITableViewDataSource, UITableViewDelegate {
                 }
             }
         }
-        
+
         return cell
     }
     
-    //MARK: -- Delegate Methods 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let game = games[indexPath.row]
         presenter?.gotoGameDetail(of: game)
     }
     
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let collectionWidth = contentSize.width
+        let width = (collectionWidth / 2) - 20
+        let height = width
+        return CGSize(width: width, height: height)
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return UITableViewAutomaticDimension
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        if indexPath.row == (self.games.count - offsetPage) {
+            presenter?.getGames()
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 5.0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 5.0
     }
 }

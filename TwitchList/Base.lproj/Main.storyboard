@@ -23,22 +23,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bFt-3A-xoj">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dwc-Tx-cXv">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lbl-Bv-cRm">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bSj-Jf-Nrb">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bFt-3A-xoj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="A4R-hN-xu6"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="bFt-3A-xoj" secondAttribute="bottom" id="F3O-VA-wno"/>
-                            <constraint firstAttribute="trailing" secondItem="bFt-3A-xoj" secondAttribute="trailing" id="NxC-5J-U10"/>
-                            <constraint firstItem="bFt-3A-xoj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="djH-0W-smR"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dwc-Tx-cXv" secondAttribute="bottom" id="2Go-PP-8HP"/>
+                            <constraint firstAttribute="trailing" secondItem="Dwc-Tx-cXv" secondAttribute="trailing" id="9Oe-3d-yCx"/>
+                            <constraint firstItem="Dwc-Tx-cXv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ecb-z6-8RH"/>
+                            <constraint firstItem="Dwc-Tx-cXv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dpX-BE-USo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8ml-lY-ewx"/>
                     <connections>
-                        <outlet property="tableView" destination="bFt-3A-xoj" id="YjS-gO-N0S"/>
+                        <outlet property="collectionView" destination="Dwc-Tx-cXv" id="9c9-eq-vUC"/>
                         <segue destination="7D5-Cv-ETO" kind="showDetail" id="pA6-e1-uuN"/>
                     </connections>
                 </viewController>

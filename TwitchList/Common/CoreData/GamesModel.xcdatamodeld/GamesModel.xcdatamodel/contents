@@ -7,16 +7,25 @@
         <attribute name="boxTemplate" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="channels" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="giantBombId" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="imageLarge" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="imageMedium" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="imageSmall" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="imageTemplate" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="logoLarge" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logoMedium" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logoSmall" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="logoTemplate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="popularity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="views" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="timestamp" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="viewers" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="id"/>
+            </uniquenessConstraint>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="GameEntity" positionX="-54" positionY="18" width="128" height="253"/>
+        <element name="GameEntity" positionX="-54" positionY="18" width="128" height="270"/>
     </elements>
 </model>
