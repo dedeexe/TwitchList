@@ -20,6 +20,17 @@ public class GameListPresenter : GameListInterface, GameListInteractorOutput {
     
     var games : [Game] = []
     var pullRefresh : Bool = false
+    var canMakeRequest = true
+    
+    var canPaginate : Bool {
+        return InternetCheck().isConnected
+    }
+    
+    var internetCheckTimer : Timer?
+    
+    func initialize() {
+        internetCheckTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(checkInternet), userInfo: nil, repeats: true)
+    }
     
     func getGames() {
         
@@ -32,10 +43,12 @@ public class GameListPresenter : GameListInterface, GameListInteractorOutput {
             return
         }
         
+        guard canPaginate else { return }
         input?.searchGames(pageSize: pageSize, pageNumber: offset)
     }
     
     func getFirstsGames() {
+        canMakeRequest = false
         pullRefresh = true
         offset = 0
         getGames()
@@ -45,14 +58,15 @@ public class GameListPresenter : GameListInterface, GameListInteractorOutput {
         router?.gotoGameDetail(of: game)
     }
     
-    public func fetchGames(games: GameInfoList) {
+    public func fetchGames(games: GameInfoList, fromDatabase storage: Bool) {
         let gameList = games.top ?? []
         
-        if pullRefresh {
+        if pullRefresh || storage {
             self.games.removeAll()
             pullRefresh = false
         }
         
+        canMakeRequest = true
         self.games.append(contentsOf: gameList)
         offset = self.games.count
         
@@ -65,4 +79,11 @@ public class GameListPresenter : GameListInterface, GameListInteractorOutput {
         view?.hideRefreshing()
     }
     
+    func initializeTimer() {
+        internetCheckTimer = Timer.scheduledTimer(timeInterval: 3.0, target: self, selector: #selector(checkInternet), userInfo: nil, repeats: true)
+    }
+    
+    @objc func checkInternet(sender:Timer) {
+        self.view?.show(internetAlert: !InternetCheck().isConnected)
+    }
 }

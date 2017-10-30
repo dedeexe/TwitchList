@@ -12,7 +12,7 @@ import ObjectMapper
 class GameListDefaultInteractor : GameListInteractorInput
 {
     weak var output : GameListInteractorOutput?
-    let persistService = PersistService()
+    let persistService = PersistService.shared
     
     func searchGames(pageSize:Int=50, pageNumber:Int=0) {
         
@@ -22,7 +22,7 @@ class GameListDefaultInteractor : GameListInteractorInput
             switch result {
                 case .success(let status, let games):
                     NSLog("Game Request Status: \(status)")
-                    self.output?.fetchGames(games: games)
+                    self.output?.fetchGames(games: games, fromDatabase: false)
                     self.save(gameInfoList: games)
                     return
                 case .error(let err as NSError):
@@ -30,7 +30,7 @@ class GameListDefaultInteractor : GameListInteractorInput
             }
             
             let games = self.restore()
-            self.output?.fetchGames(games: games)
+            self.output?.fetchGames(games: games, fromDatabase: true)
         }
     }
     

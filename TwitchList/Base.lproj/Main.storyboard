@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Dwc-Tx-cXv">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="563"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="lbl-Bv-cRm">
                                     <size key="itemSize" width="50" height="50"/>
@@ -43,24 +43,39 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sem conexão com a internet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D0M-V3-LlK">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.78631427716508595" green="0.80086927166589661" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="lXp-1U-lVh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" red="0.053865556940914772" green="0.0019352455799941382" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Dwc-Tx-cXv" secondAttribute="bottom" id="2Go-PP-8HP"/>
                             <constraint firstAttribute="trailing" secondItem="Dwc-Tx-cXv" secondAttribute="trailing" id="9Oe-3d-yCx"/>
                             <constraint firstItem="Dwc-Tx-cXv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ecb-z6-8RH"/>
+                            <constraint firstItem="D0M-V3-LlK" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ZFm-sr-upm"/>
+                            <constraint firstItem="D0M-V3-LlK" firstAttribute="top" secondItem="Dwc-Tx-cXv" secondAttribute="bottom" id="bTT-N6-CgO"/>
                             <constraint firstItem="Dwc-Tx-cXv" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dpX-BE-USo"/>
+                            <constraint firstAttribute="trailing" secondItem="D0M-V3-LlK" secondAttribute="trailing" id="gL5-g2-UBX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="D0M-V3-LlK" secondAttribute="bottom" id="jA8-ax-kjs"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="8ml-lY-ewx"/>
                     <connections>
+                        <outlet property="bottomSpace" destination="jA8-ax-kjs" id="qf6-oV-YpM"/>
                         <outlet property="collectionView" destination="Dwc-Tx-cXv" id="9c9-eq-vUC"/>
+                        <outlet property="internetLabel" destination="D0M-V3-LlK" id="O8M-xZ-D58"/>
                         <segue destination="7D5-Cv-ETO" kind="showDetail" id="pA6-e1-uuN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1086" y="-138"/>
+            <point key="canvasLocation" x="1085.5999999999999" y="-138.0809595202399"/>
         </scene>
         <!--Game Detail View Controller-->
         <scene sceneID="a1g-dF-P7h">

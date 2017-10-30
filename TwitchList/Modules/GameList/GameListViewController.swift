@@ -15,14 +15,18 @@ class GameListViewController: UIViewController  {
     var refreshControl : UIRefreshControl!
     let justOneSection = 1
     let offsetPage = 20
+    var internetAlert = false
     
     var contentSize = CGSize(width: 0, height: 0)
     
     @IBOutlet weak var collectionView : UICollectionView!
+    @IBOutlet weak var internetLabel : UILabel!
+    @IBOutlet weak var bottomSpace  : NSLayoutConstraint!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         loadConfigurations()
+        presenter?.initialize()
         presenter?.getGames()
     }
 
@@ -52,6 +56,7 @@ class GameListViewController: UIViewController  {
     }
     
     func configureView() {
+        self.bottomSpace.constant = -40
         self.title = "Jogos Mais Populares"
     }
     
@@ -62,9 +67,32 @@ class GameListViewController: UIViewController  {
     }
     
     func refreshHandler() {
+        guard let pagination = presenter?.canPaginate, pagination == true else {
+            refreshControl.endRefreshing()
+            return
+        }
         presenter?.getFirstsGames()
     }
     
+}
+
+//MARK: - Helpers
+extension GameListViewController {
+    func showInternetAlert() {
+        bottomSpace.constant = 0
+        self.view.updateConstraintsIfNeeded()
+        UIView.animate(withDuration: 0.4) { [unowned self] in
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func hideInternetAlert() {
+        bottomSpace.constant = -40
+        self.view.updateConstraintsIfNeeded()
+        UIView.animate(withDuration: 0.4) { [unowned self] in
+            self.view.layoutIfNeeded()
+        }
+    }
 }
 
 //MARK: - GameListView Implementations
@@ -74,6 +102,17 @@ extension GameListViewController : GameListView {
         
         DispatchQueue.main.async { [unowned self] in
             self.collectionView.reloadData()
+        }
+    }
+    
+    func show(internetAlert: Bool) {
+        if internetAlert != self.internetAlert {
+            self.internetAlert = internetAlert
+            if internetAlert {
+                showInternetAlert()
+                return
+            }
+            hideInternetAlert()
         }
     }
     
@@ -151,6 +190,8 @@ extension GameListViewController: UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        guard let canPaginate = presenter?.canPaginate, canPaginate == true else { return }
+        
         if indexPath.row == (self.games.count - offsetPage) {
             presenter?.getGames()
         }

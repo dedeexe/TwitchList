@@ -14,6 +14,6 @@ public protocol GameListInteractorInput : class {
 }
 
 public protocol GameListInteractorOutput : class {
-    func fetchGames(games:GameInfoList)
+    func fetchGames(games:GameInfoList, fromDatabase storage:Bool)
     func error(code:Int, message:String?)
 }

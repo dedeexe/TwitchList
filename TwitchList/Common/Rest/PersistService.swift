@@ -11,7 +11,9 @@ import CoreData
 
 class PersistService {
     
-    init() {}
+    static let shared : PersistService = PersistService()
+    
+    private init() {}
     
     func save(games:GameInfoList) {
         guard let gamesInfo = games.top else { return }
@@ -31,6 +33,7 @@ class PersistService {
             
             moc.performAndWait{
                 do {
+                    moc.reset()
                     try moc.save()
                     print("Jogos salvos com sucesso!")
                 } catch {

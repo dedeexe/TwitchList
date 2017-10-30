@@ -10,7 +10,10 @@ import Foundation
 
 
 protocol GameListInterface : class{
+    var canPaginate : Bool { get }
+    
     func getGames()
     func gotoGameDetail(of game:Game)
     func getFirstsGames()
+    func initialize()
 }
